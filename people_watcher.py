@@ -48,6 +48,7 @@ try:
 except Exception as error:
     raise Exception('HARD STOP: No communication with indication target.')
 
+
 # Functions
 
 triggered = False
@@ -94,7 +95,7 @@ def button_press(msg):
 
     try:
         requests.request('GET', LED_API_URL + "off", data=None, timeout=5)
-    except Exception as localError:
+    except Exception:
         pass
     else:
         triggered = False
